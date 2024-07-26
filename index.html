@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axity Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="image.png" alt="Logo" class="logo">
+        <h1>Password Generator</h1>
+        <form id="apgForm">
+            <label for="algorithm">Algorithm:</label>
+            <select id="algorithm">
+                <option value="0">Pronounceable</option>
+                <option value="1">Random Character</option>
+            </select>
+            
+            <fieldset class="modes">
+                <legend>Modes</legend>
+                <label><input type="checkbox" value="S"> Special Symbols (must)</label>
+                <label><input type="checkbox" value="N"> Numerals (must)</label>
+                <label><input type="checkbox" value="C"> Capitals (must)</label>
+                <label><input type="checkbox" value="L"> Lowercase (must)</label>
+            </fieldset>
+
+            <label for="exclude">Exclude Characters:</label>
+            <input type="text" id="exclude" placeholder="23456789">
+
+            <label for="numOfPass">Number of Passwords:</label>
+            <input type="number" id="numOfPass" value="6">
+
+            <label for="minPassLen">Minimum Password Length:</label>
+            <input type="number" id="minPassLen" value="8">
+
+            <label for="maxPassLen">Maximum Password Length:</label>
+            <input type="number" id="maxPassLen" value="10">
+
+            <button type="button" onclick="generatePasswords()">Generate Passwords<img src="key-icon.png" alt="icon"></button>
+        </form>
+        <div class="output" id="output"></div>
+    </div>
+
+    <div class="loader" id="loader">
+        <div class="inner one"></div>
+        <div class="inner two"></div>
+        <div class="inner three"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
